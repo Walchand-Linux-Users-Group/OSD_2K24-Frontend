@@ -1,15 +1,37 @@
 "use client";
-import { useEffect, useId, useState } from "react";
+
+import { RefObject, useEffect, useId, useState } from "react";
 import { motion } from "framer-motion";
+
 import { cn } from "@/lib/utils";
 
-export const AnimatedBeam = ({
+export interface AnimatedBeamProps {
+  className?: string;
+  containerRef: RefObject<HTMLElement>; // Container ref
+  fromRef: RefObject<HTMLElement>;
+  toRef: RefObject<HTMLElement>;
+  curvature?: number;
+  reverse?: boolean;
+  pathColor?: string;
+  pathWidth?: number;
+  pathOpacity?: number;
+  gradientStartColor?: string;
+  gradientStopColor?: string;
+  delay?: number;
+  duration?: number;
+  startXOffset?: number;
+  startYOffset?: number;
+  endXOffset?: number;
+  endYOffset?: number;
+}
+
+export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
   className,
   containerRef,
   fromRef,
   toRef,
   curvature = 0,
-  reverse = false,
+  reverse = false, // Include the reverse prop
   duration = Math.random() * 3 + 4,
   delay = 0,
   pathColor = "gray",
@@ -43,7 +65,7 @@ export const AnimatedBeam = ({
 
   useEffect(() => {
     const updatePath = () => {
-      if (containerRef?.current && fromRef?.current && toRef?.current) {
+      if (containerRef.current && fromRef.current && toRef.current) {
         const containerRect = containerRef.current.getBoundingClientRect();
         const rectA = fromRef.current.getBoundingClientRect();
         const rectB = toRef.current.getBoundingClientRect();
@@ -61,26 +83,31 @@ export const AnimatedBeam = ({
         const endY =
           rectB.top - containerRect.top + rectB.height / 2 + endYOffset;
 
-        const controlY = startY - curvature; // Adjust curvature here
-        const d = `M ${startX},${startY} Q ${ 
-          (startX + endX) / 2 
-        },${controlY} ${endX},${endY}`; // Create the path
+        const controlY = startY - curvature;
+        const d = `M ${startX},${startY} Q ${
+          (startX + endX) / 2
+        },${controlY} ${endX},${endY}`;
         setPathD(d);
       }
     };
 
+    // Initialize ResizeObserver
     const resizeObserver = new ResizeObserver((entries) => {
+      // For all entries, recalculate the path
       for (let entry of entries) {
         updatePath();
       }
     });
 
-    if (containerRef?.current) {
+    // Observe the container element
+    if (containerRef.current) {
       resizeObserver.observe(containerRef.current);
     }
 
+    // Call the updatePath initially to set the initial path
     updatePath();
 
+    // Clean up the observer on component unmount
     return () => {
       resizeObserver.disconnect();
     };
@@ -95,54 +122,31 @@ export const AnimatedBeam = ({
     endYOffset,
   ]);
 
-  // Add motion to the stroke by defining initial and animate states
-  const strokeVariants = {
-    hidden: {
-      strokeDasharray: pathD.length,
-      strokeDashoffset: pathD.length,
-    },
-    visible: {
-      strokeDashoffset: 0,
-      transition: {
-        duration,
-        ease: "easeInOut",
-        repeat: Infinity,
-        repeatType: "loop",
-      },
-    },
-  };
-
   return (
     <svg
       fill="none"
-      width={svgDimensions.width || 500}
-      height={svgDimensions.height || 500}
-      xmlns="https://cdn.discordapp.com/attachments/1249775253564166264/1250092512442322944/ice_bear.jpg?ex=6701f420&is=6700a2a0&hm=bb68ab1b128960ee40f3a4f05afeb9477a3d2deced1dcb879425053f6fa8f4b0&"
+      width={svgDimensions.width}
+      height={svgDimensions.height}
+      xmlns="http://www.w3.org/2000/svg"
       className={cn(
         "pointer-events-none absolute left-0 top-0 transform-gpu stroke-2",
-        className
+        className,
       )}
-      viewBox={`0 0 ${svgDimensions.width || 500} ${svgDimensions.height || 500}`}
+      viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.height}`}
     >
-      <motion.path
+      <path
         d={pathD}
         stroke={pathColor}
         strokeWidth={pathWidth}
         strokeOpacity={pathOpacity}
         strokeLinecap="round"
-        variants={strokeVariants}
-        initial="hidden"
-        animate="visible"
       />
-      <motion.path
+      <path
         d={pathD}
         strokeWidth={pathWidth}
         stroke={`url(#${id})`}
         strokeOpacity="1"
         strokeLinecap="round"
-        variants={strokeVariants}
-        initial="hidden"
-        animate="visible"
       />
       <defs>
         <motion.linearGradient
@@ -164,7 +168,7 @@ export const AnimatedBeam = ({
           transition={{
             delay,
             duration,
-            ease: [0.16, 1, 0.3, 1],
+            ease: [0.16, 1, 0.3, 1], // https://easings.net/#easeOutExpo
             repeat: Infinity,
             repeatDelay: 0,
           }}
@@ -172,11 +176,13 @@ export const AnimatedBeam = ({
           <stop stopColor={gradientStartColor} stopOpacity="0"></stop>
           <stop stopColor={gradientStartColor}></stop>
           <stop offset="32.5%" stopColor={gradientStopColor}></stop>
-          <stop offset="100%" stopColor={gradientStopColor} stopOpacity="0"></stop>
+          <stop
+            offset="100%"
+            stopColor={gradientStopColor}
+            stopOpacity="0"
+          ></stop>
         </motion.linearGradient>
       </defs>
     </svg>
   );
 };
-
-export default AnimatedBeam;
