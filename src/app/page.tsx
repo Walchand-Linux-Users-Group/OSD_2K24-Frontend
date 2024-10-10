@@ -5,16 +5,15 @@ import Github from "../pages/Github";
 import CICD from "../pages/CICD";
 import Register from "../pages/Register";
 import { AnimatedBeamDemo } from "@/components/ui/Beam";
-
+import { BorderBeamDemo } from "@/components/ui/lightcard";
+import Gooey from "@/components/sunnysundown/Gooey";
+import MovingText from "@/components/sunnysundown/Movingtext";
 
 export default function Home() {
   return (
     <div>
-      OSD
-      <div>
-        {/* <AnimatedBeamDemo /> */}
-        <BorderBeamDemo />
-      </div>
+      <MovingText />
+      <Gooey />
     </div>
   );
 }
