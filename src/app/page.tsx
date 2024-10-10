@@ -6,15 +6,16 @@ import CICD from "../pages/CICD";
 import Register from "../pages/Register";
 import { AnimatedBeamDemo } from "@/components/ui/Beam";
 import { BorderBeamDemo } from "@/components/ui/lightcard";
+import MovingText from "@/components/ui/Movingtext";
+import Gooey from "@/components/ui/gooey";
 
 export default function Home() {
   return (
     <div>
       OSD
-      <div className="justify-center">
-        {/* <AnimatedBeamDemo /> */}
-        <BorderBeamDemo />
-      </div>
+      <Git />
+      <Gooey />
+      <MovingText />
     </div>
   );
 }
