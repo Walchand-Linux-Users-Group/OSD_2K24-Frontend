@@ -65,3 +65,23 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+canvas {
+  background: #131313; /* Color of the scratch-off overlay */
+}

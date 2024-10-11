@@ -8,12 +8,16 @@ import { AnimatedBeamDemo } from "@/components/ui/Beam";
 import { BorderBeamDemo } from "@/components/ui/lightcard";
 import Gooey from "@/components/sunnysundown/Gooey";
 import MovingText from "@/components/sunnysundown/Movingtext";
+import Loader from "@/components/sunnysundown/landing";
+import ScratchOffVideo from "@/components/sunnysundown/scratchoffvideo";
 
 export default function Home() {
   return (
     <div>
-      <MovingText />
-      <Gooey />
+      {/* <Loader /> */}
+      <ScratchOffVideo />
+      {/* <MovingText /> */}
+      {/* <Gooey /> */}
     </div>
   );
 }
