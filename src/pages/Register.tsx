@@ -1,5 +1,7 @@
+"use client";
 import IconCloud from "@/components/ui/icon-cloud";
 import React from "react";
+import Registerr from "./Regg";
 
 const Register = () => {
   return (
@@ -28,7 +30,6 @@ const Register = () => {
             "nginx",
             "docker",      // Docker
             "git",         // Git
-            "jira",
             "github",      // GitHub
             "gitlab",
             "visualstudiocode",
@@ -38,6 +39,7 @@ const Register = () => {
             "eks"          // Amazon EKS (ensure this slug is correct or supported)
           ]}
         />
+          <Registerr></Registerr>
       </div>
     </div>
   );
