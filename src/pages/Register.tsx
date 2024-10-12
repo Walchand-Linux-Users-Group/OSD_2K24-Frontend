@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { User, Mail, Phone, Book } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import Gooey from "@/components/sunnysundown/Gooey";
+
 import IconCloud from "@/components/ui/icon-cloud";
 import { BiChevronDown } from "react-icons/bi";
 
@@ -20,9 +21,9 @@ const Dropdown = ({
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="z-50">
+        <div className="relative z-50 w-full">
             <div
-                className=" cursor-pointer bg-transparent border border-white rounded-md pl-10 pr-3 py-3 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-[#FF7F50] transition duration-150 ease-in-out"
+                className="relative cursor-pointer bg-transparent border border-white rounded-md pl-10 pr-3 py-3 shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-[#FF7F50] transition duration-150 ease-in-out"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -37,7 +38,7 @@ const Dropdown = ({
                 </span>
             </div>
             {isOpen && (
-                <div className="absolute z-50 mt-1 w-full bg-black/10 backdrop-blur-sm rounded-md shadow-lg">
+                <div className="absolute z-50 mt-1 w-full bg-black/10 backdrop-blur-sm rounded-md shadow-lg max-h-32 overflow-auto">
                     <div className="py-1">
                         {options.map((item, index) => (
                             <div
@@ -89,11 +90,10 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen py-12 px-4 sm:px-8 lg:px-10">
-            <Gooey />
+        <div className="min-h-screen py-12 px-4 sm:px-8 lg:px-10 relative">
             <motion.div
                 ref={containerRef}
-                className="w-full relative max-w-7xl mx-auto bg-black/10 backdrop-blur-lg rounded-2xl shadow-2xl z-10 overflow-hidden"
+                className="w-full relative max-w-7xl mx-auto bg-black/5 backdrop-blur-lg rounded-2xl shadow-2xl z-10 overflow-hidden"
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
                 variants={containerVariants}
@@ -131,7 +131,7 @@ const Register = () => {
                         />
                     </motion.div>
                     <motion.div
-                        className="w-full lg:w-1/2 p-6 lg:p-12 border-t lg:border-t-0 lg:border-l border-white"
+                        className="w-full lg:w-1/2 p-6 py-8 lg:p-12 border-t lg:border-t-0 lg:border-l border-white"
                         variants={itemVariants}
                     >
                         <div className="mx-auto">
@@ -193,7 +193,10 @@ const Register = () => {
                                     </motion.div>
                                 ))}
 
-                                <motion.div variants={itemVariants} className="z-10 relative ">
+                                <motion.div
+                                    variants={itemVariants}
+                                    className="z-10 relative "
+                                >
                                     <Dropdown
                                         label="Year of Study"
                                         selectedItem={yearOfStudy}
@@ -206,11 +209,8 @@ const Register = () => {
                                         handleItemClick={handleYearClick}
                                     />
                                 </motion.div>
-
                                 <motion.div variants={itemVariants}>
-                                    <button
-                                        className="w-full z-0 flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#FF7F50] hover:bg-[#FF6347] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF7F50] transition duration-150 ease-in-out transform hover:scale-105"
-                                    >
+                                    <button className="w-full text-lg z-0 flex justify-center py-3 px-4 border border-transparent font-medium rounded-md text-white bg-orange-600 hover:bg-orange-600  transition duration-150 ease-in-out transform hover:scale-105">
                                         Register
                                     </button>
                                 </motion.div>
@@ -219,6 +219,7 @@ const Register = () => {
                     </motion.div>
                 </div>
             </motion.div>
+            <Gooey />
         </div>
     );
 };

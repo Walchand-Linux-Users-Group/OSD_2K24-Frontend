@@ -42,40 +42,58 @@ const Git: React.FC = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="min-h-screen overflow-hidden flex flex-col lg:flex-row justify-center items-center p-5  m-5">
+    <div
+      className="
+      border-[1px] border-gray-300 rounded-2xl
+      shadow-xl back
+      m-[25px] p-[25px]
+      drop-shadow-2xl
+      bg-transparent bg-clip-padding backdrop-blur-lg bg-opacity-30
+      overflow-hidden flex flex-col lg:flex-row justify-center items-center relative"
+    >
       {/* Text and 3D model */}
       <div className="w-full lg:w-2/3 flex flex-col lg:flex-row items-center justify-center mb-8 lg:mb-0 relative">
         {/* Text */}
-        <div className="text-center lg:text-left mb-8 lg:mb-0 lg:mr-8">
-          <p className="text-2xl mb-2">Learn</p>
-          <h1 className="text-6xl lg:text-8xl text-orange-600 font-bold mb-4">
+        <div className="text-center lg:text-left mb-2 lg:mb-0 lg:mr-8 flex flex-col justify-center items-center">
+          <p className="text-2xl mb-2 ">Learn</p>
+          <h1
+            className="
+          text-[200px] lg:text-[300px]
+        text-orange-600
+          font-bold 
+          mb-4"
+          >
             GIT
           </h1>
           <p className="text-lg mb-4 max-w-md">
             The most trusted version control. Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Cupiditate, blanditiis.
           </p>
-          <div className="flex items-center justify-center lg:justify-start">
-            <span className="mr-2">Let's learn GIT</span>
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.3,
-                duration: 0.5,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-              className="cursor-pointer"
-            >
-              <ArrowDownCircle size={24} />
-            </motion.div>
+
+          {/* Register button  */}
+          <div
+            className="
+            cursor-pointer
+            h-[30px] w-[125px]
+            p-2
+            rounded-2xl 
+            border-black border-[1px]
+            flex items-center justify-center
+            text-black
+            hover:bg-orange-600 hover:text-black
+            transition-all
+            duration-300
+            font-light
+            sm:text-center
+            "
+          >
+            Register Now
           </div>
         </div>
 
         {/* 3D model */}
         <div
-          className="relative h-[300px] w-[300px] lg:h-[400px] lg:w-[400px]"
+          className="relative h-[500px] w-[500px] lg:h-[700px] lg:w-[700px]"
           onPointerOver={() => setHovered(true)}
           onPointerOut={() => setHovered(false)}
         >
@@ -93,27 +111,6 @@ const Git: React.FC = () => {
       </div>
 
       {/* Cards */}
-      <div className=" absolute top-4 right-4 lg:top-8 lg:right-8 flex flex-col space-y-4 max-w-xs">
-        <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-4">
-          <h2 className="text-2xl font-semibold mb-2">GIT Basics</h2>
-          <p className="text-sm">
-            Learn the fundamentals of version control with Git. Master commits,
-            branches, and merges.
-          </p>
-        </div>
-        <div className=" bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-4">
-          <h2 className="text-2xl font-semibold mb-2">Advanced GIT</h2>
-          <p className="text-sm">
-            Dive deep into Git's advanced features. Explore rebasing,
-            cherry-picking, and more.
-          </p>
-        </div>
-      </div>
-
-      {/* Session info */}
-      <div className="absolute bottom-4 right-4 lg:bottom-8 lg:right-8">
-        <BorderBeamDemo />
-      </div>
     </div>
   );
 };
