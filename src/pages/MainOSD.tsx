@@ -40,8 +40,8 @@ const Main_OSD = () => {
   }, []);
 
   return (
+
     <div className="flex flex-col items-center justify-between min-h-screen bg-white text-gray-900 p-4">
-   
       <header
         className="w-full p-4 rounded-xl flex justify-between items-center"
         style={navbarStyle}
