@@ -76,3 +76,16 @@ video {
 /* canvas {
   background: #131313; 
 } */
+
+
+.fade-image {
+  transition: opacity 1s ease-in-out; /* Transition for fading effect */
+}
+
+.fade-image:not(:nth-child(1)) {
+  opacity: 0; /* Hide images that are not the first */
+}
+
+.fade-image:nth-child(1) {
+  opacity: 1; /* Show the first image */
+}

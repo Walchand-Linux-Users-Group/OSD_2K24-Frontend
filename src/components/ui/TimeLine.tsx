@@ -11,6 +11,7 @@ import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import HotelIcon from '@mui/icons-material/Hotel';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 export default function TimeLine() {
   return (
@@ -34,9 +35,16 @@ export default function TimeLine() {
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
-          <TimelineDot>
-            <FastfoodIcon />
-          </TimelineDot>
+          <TimelineDot
+            sx={{
+              backgroundImage: 'url(/ld.jpeg)', // Use the correct image path
+              backgroundSize: 'cover', // Ensure the image covers the dot area
+              backgroundPosition: 'center', // Center the image
+              width: '50px', // Adjust the size
+              height: '50px',
+              borderRadius: '50%', // Keep it circular
+            }}
+          />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '22px', px: 2 }}>
@@ -75,9 +83,17 @@ export default function TimeLine() {
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
-          <TimelineDot>
-            <FastfoodIcon />
-          </TimelineDot>
+          <TimelineDot
+            sx={{
+              backgroundImage: 'url(/OSD.png)', // Use the correct image path
+              backgroundSize: 'cover', // Ensure the image covers the dot area
+              backgroundPosition: 'center', // Center the image
+              width: '50px', // Adjust the size
+              height: '50px',
+              borderRadius: '50%', // Keep it circular/home/sandesh/Downloads/OSD.png /home/sandesh/Downloads/LD.png
+              
+            }}
+          />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '22px', px: 2 }}>
@@ -117,9 +133,16 @@ export default function TimeLine() {
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
-          <TimelineDot color="primary">
-            <LaptopMacIcon />
-          </TimelineDot>
+          <TimelineDot
+            sx={{
+              backgroundImage: 'url(/Meta.jpeg)', // Use the correct image path
+              backgroundSize: 'cover', // Ensure the image covers the dot area
+              backgroundPosition: 'center', // Center the image
+              width: '50px', // Adjust the size
+              height: '50px',
+              borderRadius: '50%', // Keep it circular
+            }}
+          />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '22px', px: 2 }}>
@@ -159,9 +182,16 @@ export default function TimeLine() {
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
-          <TimelineDot>
-            <FastfoodIcon />
-          </TimelineDot>
+          <TimelineDot
+            sx={{
+              backgroundImage: 'url(/spandan.png)', // Use the correct image path
+              backgroundSize: 'cover', // Ensure the image covers the dot area
+              backgroundPosition: 'center', // Center the image
+              width: '50px', // Adjust the size
+              height: '50px',
+              borderRadius: '50%', // Keep it circular
+            }}
+          />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '22px', px: 2 }}>

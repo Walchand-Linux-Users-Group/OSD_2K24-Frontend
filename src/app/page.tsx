@@ -19,12 +19,12 @@ export default function Home() {
 
       "
     >
-      <MainOSD />
+       <MainOSD />
       <VidSection />
       <Git />
       <Github />
       <CICD />
-      <Register />
+      <Register /> 
       <AboutUS />
     </div>
   );
