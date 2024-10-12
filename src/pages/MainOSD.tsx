@@ -1,3 +1,4 @@
+import MovingBall from "@/components/orangeBall/OrangeBall";
 import React from "react";
 
 const Main_OSD = () => {

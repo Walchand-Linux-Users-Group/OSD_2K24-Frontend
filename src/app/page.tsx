@@ -4,16 +4,28 @@ import Git from "../pages/Git";
 import Github from "../pages/Github";
 import CICD from "../pages/CICD";
 import Register from "../pages/Register";
+import VidSection from "@/pages/VidSection";
 
 export default function Home() {
   return (
-    <div>
+    <div
+      className="
+      bg-[#faf8f6]
+      dark:bg-black
+      dark:text-white
+      text-black
+      overflow-x-hidden
+      overflow-y-auto
+
+      "
+    >
       <MainOSD />
-      <AboutUS />
+      <VidSection />
       <Git />
       <Github />
       <CICD />
       <Register />
+      <AboutUS />
     </div>
   );
 }
