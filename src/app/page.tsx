@@ -15,9 +15,10 @@ export default function Home() {
   return (
     <div>
       {/* <Loader /> */}
-      <ScratchOffVideo />
+      {/* <ScratchOffVideo /> */}
       {/* <MovingText /> */}
       {/* <Gooey /> */}
+      <Register />
     </div>
   );
 }

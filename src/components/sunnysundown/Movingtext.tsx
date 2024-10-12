@@ -1,6 +1,6 @@
 // MovingText.tsx
 import React from 'react';
-import './MovingText.css';
+import './Movingtext.css';
 
 const MovingText: React.FC = () => {
   return (

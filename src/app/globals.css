@@ -66,15 +66,6 @@
   }
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #333;
-}
 
 video {
   width: 100%;
@@ -82,6 +73,6 @@ video {
   display: block;
 }
 
-canvas {
-  background: #131313; /* Color of the scratch-off overlay */
-}
+/* canvas {
+  background: #131313; 
+} */
