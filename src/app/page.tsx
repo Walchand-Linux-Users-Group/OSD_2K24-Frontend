@@ -18,7 +18,8 @@ export default function Home() {
       {/* <ScratchOffVideo /> */}
       {/* <MovingText /> */}
       {/* <Gooey /> */}
-      <Register />
+      <MainOSD />
+      {/* <Register /> */}
     </div>
   );
 }
