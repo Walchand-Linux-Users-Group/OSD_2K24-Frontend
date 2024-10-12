@@ -5,6 +5,8 @@ import Github from "../pages/Github";
 import CICD from "../pages/CICD";
 import Register from "../pages/Register";
 import VidSection from "@/pages/VidSection";
+import Loader from "@/components/sunnysundown/landing";
+import Footer from "@/pages/Footer";
 
 export default function Home() {
   return (
@@ -19,13 +21,15 @@ export default function Home() {
 
       "
     >
-       <MainOSD />
+      <Loader />
+      <MainOSD />
       <VidSection />
       <Git />
       <Github />
       <CICD />
       <Register />
-      {/* <AboutUS /> */}
+      <AboutUS />
+      <Footer />
     </div>
   );
 }
