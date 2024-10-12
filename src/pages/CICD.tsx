@@ -85,7 +85,7 @@ const TechItem = ({ Icon, name, showLine }: TechItemProps) => {
         >
             <motion.div className="flex flex-col items-center justify-center space-y-1">
                 <motion.div
-                    className="p-8 bg-white/10 backdrop-blur-md rounded-full shadow-lg flex flex-col space-y-2 items-center justify-center w-[200px] h-[200px]"
+                    className="p-8 bg-white/10 backdrop-blur-md rounded-full shadow-lg flex flex-col space-y-2 items-center justify-center w-[200px] h-[200px] cursor-pointer z-10"
                     whileHover={{ scale: 1.15, rotate: 20 }}
                     transition={{
                         duration: 0.4,
