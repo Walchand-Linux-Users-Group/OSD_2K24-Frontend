@@ -36,7 +36,7 @@ const Main_OSD = () => {
     const intervalId = setInterval(() => {
       saturation = (saturation + 5) % 100;
       setNavbarStyle({
-        background: `linear-gradient(90deg, rgba(255,165,0,${
+        background: `linear-gradient(90deg, rgba(255,165,10,${
           saturation / 100
         }), rgba(255,165,0,0.9))`,
       });
@@ -46,7 +46,6 @@ const Main_OSD = () => {
   }, []);
 
   return (
-
     <div className="flex flex-col items-center justify-between min-h-screen bg-white text-gray-900 p-4">
       <header
         className="w-full p-4 rounded-xl flex justify-between items-center"
@@ -54,7 +53,8 @@ const Main_OSD = () => {
       >
         <a href="https://wcewlug.org" target="_blank" rel="noopener noreferrer">
           <img
-            src="https://wcewlug.org/assets/img/logo.png"
+            // src="https://wcewlug.org/assets/img/logo.png"
+            src="/OSD_2K24-Frontend/src/components/Images/WLUG_LOGO.jpg"
             alt="WLUG Logo"
             className="w-12 h-12"
           />
