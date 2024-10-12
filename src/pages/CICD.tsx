@@ -1,39 +1,27 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import { Github, Server, Terminal } from "lucide-react";
-import {
-    FaJenkins,
-    FaAws,
-    FaCube,
-    FaCode,
-    FaDocker,
-    FaGit,
-} from "react-icons/fa";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import GitIcon from "@/assets/techlogos/git.png";
+import GithubIcon from "@/assets/techlogos/github.png";
+import JenkinsIcon from "@/assets/techlogos/jenkins.png";
+import JFrogIcon from "@/assets/techlogos/jfrog.svg";
+import DockerIcon from "@/assets/techlogos/docker.png";
+import TerraformIcon from "@/assets/techlogos/terraform.png";
+import EKSIcon from "@/assets/techlogos/amazoneks.png";
+import SonarQubeIcon from "@/assets/techlogos/sonarqube.png";
+import Image from "next/image";
 
 // Define technology icons and names
 const techs = [
-    { name: "Git", Icon: FaGit },
-    { name: "GitHub", Icon: Github },
-    { name: "Jenkins", Icon: FaJenkins },
-    { name: "JFrog", Icon: FaCube },
-    { name: "Docker", Icon: FaDocker },
-    { name: "Terraform", Icon: FaCode },
-    { name: "Amazon EKS", Icon: FaAws },
-    { name: "SonarQube", Icon: Server },
+    { name: "Git", Icon: GitIcon },
+    { name: "GitHub", Icon: GithubIcon },
+    { name: "Jenkins", Icon: JenkinsIcon },
+    { name: "JFrog", Icon: JFrogIcon },
+    { name: "Docker", Icon: DockerIcon },
+    { name: "Terraform", Icon: TerraformIcon },
+    { name: "Amazon EKS", Icon: EKSIcon },
+    { name: "SonarQube", Icon: SonarQubeIcon },
 ];
-
-// Container animation
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.3,
-            delayChildren: 0.2,
-        },
-    },
-};
 
 // Item animation (icons)
 const itemVariants = {
@@ -45,62 +33,80 @@ const itemVariants = {
     },
 };
 
-// Connecting line animation
+// Line animation (vertical)
 const lineVariants = {
-    hidden: { width: 0 },
+    hidden: { scaleY: 0 },
     visible: {
-        width: "100%",
+        scaleY: 1,
         transition: { duration: 0.5, ease: "easeInOut" },
     },
 };
 
 const CICD = () => {
     return (
-        <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white p-8">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-100 mb-12">
+        <div className="min-h-screen flex flex-col justify-center items-center px-8 py-12">
+            <h1 className="text-4xl text-center md:text-5xl font-extrabold text-gray-900">
                 CI/CD Pipeline
             </h1>
 
-            <div className="bg-gray-800 rounded-xl shadow-xl max-w-7xl w-full flex justify-center items-center p-8 md:p-12">
-                <motion.div
-                    className="relative flex justify-between items-center w-full max-w-5xl flex-wrap gap-8"
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                >
+            <div className="rounded-xl w-fit flex justify-center items-center p-8 md:p-12">
+                <div className="relative flex flex-col items-center w-full">
                     {techs.map((tech, index) => (
-                        <motion.div
+                        <TechItem
                             key={index}
-                            className="flex flex-col items-center space-y-2"
-                            variants={itemVariants}
-                        >
-                            <motion.div
-                                className="p-5 bg-gray-700 rounded-full shadow-md flex items-center justify-center"
-                                whileHover={{ scale: 1.15, rotate: 20 }}
-                                transition={{
-                                    duration: 0.4,
-                                    ease: "easeInOut",
-                                }}
-                            >
-                                <tech.Icon className="h-10 w-10 text-blue-400" />
-                            </motion.div>
-
-                            {index < techs.length - 1 && (
-                                <motion.div
-                                    className="absolute top-1/2 left-full h-2 bg-blue-400"
-                                    style={{ width: "80px" }}
-                                    variants={lineVariants}
-                                />
-                            )}
-
-                            <p className="text-lg text-gray-300 font-semibold">
-                                {tech.name}
-                            </p>
-                        </motion.div>
+                            Icon={tech.Icon}
+                            name={tech.name}
+                            showLine={index < techs.length - 1}
+                        />
                     ))}
-                </motion.div>
+                </div>
             </div>
         </div>
+    );
+};
+
+interface TechItemProps {
+    Icon: string;
+    name: string;
+    showLine: boolean;
+}
+// Component for individual tech items with animations
+const TechItem = ({ Icon, name, showLine }: TechItemProps) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false, amount: 0.2 });
+
+    return (
+        <motion.div
+            ref={ref}
+            className="flex flex-col items-center space-y-2"
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+        >
+            <motion.div className="flex flex-col items-center justify-center space-y-1">
+                <motion.div
+                    className="p-8 bg-white/10 backdrop-blur-md rounded-full shadow-lg flex flex-col space-y-2 items-center justify-center w-[200px] h-[200px]"
+                    whileHover={{ scale: 1.15, rotate: 20 }}
+                    transition={{
+                        duration: 0.4,
+                        ease: "easeInOut",
+                    }}
+                >
+                    <Image src={Icon} alt={name} width={100} height={100} />
+                    <p className="text-lg text-center w-full text-gray-900 font-semibold">
+                        {name}
+                    </p>
+                </motion.div>
+
+                {showLine && (
+                    <motion.div
+                        className="bg-orange-600 w-1 h-16 block"
+                        style={{ originY: 0 }}
+                        variants={lineVariants}
+                    />
+                )}
+            </motion.div>
+        </motion.div>
     );
 };
 

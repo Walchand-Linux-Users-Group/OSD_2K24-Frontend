@@ -90,7 +90,7 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen py-12 px-4 sm:px-8 lg:px-10 relative">
+        <div className="min-h-screen py-12 px-4 sm:px-8 lg:px-10 relative overflow-hidden">
             <motion.div
                 ref={containerRef}
                 className="w-full relative max-w-7xl mx-auto bg-black/5 backdrop-blur-lg rounded-2xl shadow-2xl z-10 overflow-hidden"
