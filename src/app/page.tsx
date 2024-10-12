@@ -25,7 +25,7 @@ export default function Home() {
       <Github />
       <CICD />
       <Register />
-      <AboutUS />
+      {/* <AboutUS /> */}
     </div>
   );
 }

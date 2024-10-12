@@ -46,7 +46,7 @@ const Git: React.FC = () => {
       className="
       border-[1px] border-gray-300 rounded-2xl
       shadow-xl back
-      m-[25px] p-[25px]
+      m-[25px] p-[25px] mb-32
       drop-shadow-2xl
       bg-transparent bg-clip-padding backdrop-blur-lg bg-opacity-30
       overflow-hidden flex flex-col lg:flex-row justify-center items-center relative"
@@ -58,7 +58,7 @@ const Git: React.FC = () => {
           <p className="text-2xl mb-2 ">Learn</p>
           <h1
             className="
-          text-[200px] lg:text-[300px]
+          text-[50px] lg:text-[300px]
         text-orange-600
           font-bold 
           mb-4"
