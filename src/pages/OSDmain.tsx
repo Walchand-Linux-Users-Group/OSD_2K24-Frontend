@@ -8,13 +8,23 @@ import grainImage from "../assets/grain.jpg";
 import Icon from "@/components/Icon";
 import HeroOrbit from "@/components/HeroOrbit";
 
+import BlurIn from "@/components/ui/blur-in";
+
 const OSDmain = () => {
   const handleAboutClick = () => {
     console.log("Want to know about us button clicked!");
+    const aboutUsSection = document.getElementById("aboutus");
+    if (aboutUsSection) {
+      aboutUsSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleRegisterClick = () => {
     console.log("Register button clicked!");
+    const registerSection = document.getElementById("register");
+    if (registerSection) {
+      registerSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -88,19 +98,8 @@ const OSDmain = () => {
             <Image
               src={wlugLogo}
               alt="WLUG Logo"
-              className="w-[100px] h-[100px]"
+              className=" h-[120px] w-[190px] rounded-2xl shadow-lg "
             />
-          </motion.div>
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="mt-4 bg-gray-400 border border-gray-300 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg"
-          >
-            <div className="bg-green-500 shadow-lg shadow-green-300 w-2.5 h-2.5 rounded-full"></div>
-            <div className="text-sm font-medium text-gray-800">
-              Presents the auspicious event
-            </div>
           </motion.div>
 
           <motion.div
@@ -110,29 +109,25 @@ const OSDmain = () => {
             className="text-center mt-4"
           >
             <h1 className="font-righteous text-xl tracking-wide text-gray-300">
-              For the love of open source
+              For the love of open source ❤️
             </h1>
-            <motion.div
+            {/* <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.5 }}
-              className="font-righteous text-6xl text-orange-500 font-bold mt-2"
+              className="font-righteous text-6xl lg:text-9xl text-orange-500 font-bold mt-2"
             >
               OPEN SOURCE DAY
-            </motion.div>
+            </motion.div> */}
+
+            <BlurIn
+              word="Open Source Day"
+              className="font-righteous text-6xl lg:text-9xl text-orange-500 font-bold mt-2"
+            />
           </motion.div>
         </div>
-        <motion.p
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.5 }}
-          className="mt-4 text-center text-gray-300"
-        >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat,
-          velit!
-        </motion.p>
 
-        <div className="flex flex-col items-center mt-8 gap-5 z-10">
+        <div className="flex flex-col lg:flex-row justify-center items-center mt-8 gap-5 z-10">
           <motion.button
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -146,6 +141,7 @@ const OSDmain = () => {
             <span className="font-semibold">🐧</span>
             <span className="text-white">Want to know about us?</span>
           </motion.button>
+
           <motion.button
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
