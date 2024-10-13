@@ -125,9 +125,10 @@ export default function Home() {
       <div id="home" className=" h-screen w-full">
         <OSDmain />
       </div>
-      <div className=" h-screen w-full  bg-gradient-to-b from-zinc-800 via-zinc-800 to-white">
+      <div className="h-screen w-full bg-gradient-to-b from-zinc-800 via-zinc-800 to-white">
         <VidSection />
       </div>
+
       <div id="sessions">
         <Git />
         <Github />
