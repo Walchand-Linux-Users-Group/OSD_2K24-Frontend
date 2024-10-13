@@ -15,6 +15,8 @@ import Register from "../pages/Register";
 import VidSection from "@/pages/VidSection";
 import OSDmain from "@/pages/OSDmain";
 import { HomeIcon, Info, Presentation, UserPlus } from "lucide-react";
+import AboutUs from "../pages/AboutUS";
+import Footer from "../pages/Footer";
 
 export default function Home() {
   const navItems = [
@@ -139,9 +141,11 @@ export default function Home() {
       </div>
       <div
         id="aboutus"
-        className="h-[80vh] w-full bg-gradient-to-b from-stone-900 to-zinc-600"
+        // className="h-[80vh] w-full bg-gradient-to-b from-stone-900 to-zinc-600"
       >
-        <div>About Us</div>
+        {/* <div>About Us</div> */}
+        <AboutUs/>
+        <Footer/>
       </div>
     </div>
   );

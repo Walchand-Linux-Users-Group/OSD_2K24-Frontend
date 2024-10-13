@@ -14,11 +14,11 @@ const Footer = () => {
         <>
           <div id="about" className="text-black py-0   mt-10">
             {/* <img src={FooterImg} className=" bg-blend-multiply"></img> */}
-            <div className="flex flex-col space-y-14 md:space-y-0 md:flex-row bg-black border-[8px] border-orange-600 rounded-lg lg:justify-evenly justify-center p-6 items-center lg:px-12">
+            <div className="flex flex-col space-y-5 md:space-y-0 md:flex-row bg-black border-[8px] border-orange-600 rounded-lg lg:justify-evenly justify-center p-6 items-center lg:px-12">
                 
                 <div className="space-y-2">
                     <a href="https://www.wcewlug.org/" target="_blank">
-                        <img src="/wlug.png" className="w-48 mx-auto"></img>
+                        <img src="/wlug_white.png" className="lg:max-w-[13rem] w-full max-w-[12rem]"></img>
                     </a>
                     
                 </div>
