@@ -5,7 +5,8 @@ import Github from "../pages/Github";
 import CICD from "../pages/CICD";
 import Register from "../pages/Register";
 import VidSection from "@/pages/VidSection";
-
+import ParticlesBackground from "../pages/ParticlesBackground";
+import Footer from "../pages/Footer";
 export default function Home() {
   return (
     <div
@@ -19,13 +20,19 @@ export default function Home() {
 
       "
     >
-       <MainOSD />
+      {/* <Loader /> */}
+
+
+      <MainOSD />
       <VidSection />
       <Git />
       <Github />
       <CICD />
       <Register />
-      {/* <AboutUS /> */}
+      <AboutUS />
+      {/* <ParticlesBackground/> */}
+      <Footer/>
+
     </div>
   );
 }
