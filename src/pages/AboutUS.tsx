@@ -36,7 +36,7 @@ const AboutUS = () => {
 
   return (
     <>
-      <BgLayout>
+      {/* <BgLayout> */}
         <h1 className="mt-10 text-4xl mb-10 font-bold text-center">About us</h1>
         <div className="min-h-screen w-full relative overflow-hidden">
           <div className="flex flex-col lg:flex-row gap-5 h-full w-full relative">
@@ -66,7 +66,7 @@ const AboutUS = () => {
             </div>
           </div>
         </div>
-      </BgLayout>
+      {/* </BgLayout> */}
     </>
   );
 };
