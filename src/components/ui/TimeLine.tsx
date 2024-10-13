@@ -11,7 +11,7 @@ import Box from '@mui/material/Box';
 
 export default function TimeLine() {
   return (
-    <Timeline position="alternate">
+    <Timeline position="alternate" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
       <TimelineItem>
         <TimelineOppositeContent
            sx={{
