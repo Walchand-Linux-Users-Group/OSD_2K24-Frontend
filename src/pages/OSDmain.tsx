@@ -30,7 +30,7 @@ const OSDmain = () => {
   return (
     <div
       className="h-full w-full 
-        bg-gradient-to-b from-gray-900 to-zinc-600
+        bg-gradient-to-b from-gray-900 to-zinc-800
         relative z-0 overflow-hidden
         py-32 md:py-48 lg:py-60"
     >
@@ -101,16 +101,18 @@ const OSDmain = () => {
               className=" h-[120px] w-[190px] rounded-2xl shadow-lg "
             />
           </motion.div>
-
+          <motion.div>
+            <BlurIn
+              word="Celebrates"
+              className=" text-xl tracking-wide text-gray-300 p-2 m-2"
+            />
+          </motion.div>
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-center mt-4"
+            className="text-center "
           >
-            <h1 className="font-righteous text-xl tracking-wide text-gray-300">
-              For the love of open source ❤️
-            </h1>
             {/* <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -119,12 +121,15 @@ const OSDmain = () => {
             >
               OPEN SOURCE DAY
             </motion.div> */}
-
-            <BlurIn
-              word="Open Source Day"
-              className="font-righteous text-6xl lg:text-9xl text-orange-500 font-bold mt-2"
-            />
           </motion.div>
+          <BlurIn
+            word="Open Source Day"
+            className="font-righteous font-bold text-6xl lg:text-9xl text-orange-500 mt-2"
+          />
+          <BlurIn
+            word="For the love of open source ❤️"
+            className=" font-md p-2 mt-2 text-xl tracking-wide text-gray-300"
+          />
         </div>
 
         <div className="flex flex-col lg:flex-row justify-center items-center mt-8 gap-5 z-10">
