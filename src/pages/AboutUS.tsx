@@ -1,8 +1,7 @@
 "use client";  // Marking this as a Client Component
 
 import React, { useEffect, useState } from "react";
-import TimeLine from "../components/ui/TimeLine"; // Adjust the relative path based on the folder structure
-import BgLayout from "../components/ui/bgLayout";
+import TimeLine from "../components/ui/TimeLine"; 
 
 const AboutUS = () => {
   // Array of image paths
@@ -36,7 +35,7 @@ const AboutUS = () => {
 
   return (
     <>
-      <BgLayout>
+      {/* <BgLayout> */}
         <h1 className="mt-10 text-4xl mb-10 font-bold text-center">About us</h1>
         <div className="min-h-screen w-full relative  overflow-hidden">
           <div className="flex flex-col lg:flex-row gap-5 h-full w-full relative">
@@ -66,7 +65,7 @@ const AboutUS = () => {
             </div>
           </div>
         </div>
-      </BgLayout>
+      {/* </BgLayout> */}
     </>
   );
 };
