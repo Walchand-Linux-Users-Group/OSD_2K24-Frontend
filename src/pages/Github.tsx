@@ -1,118 +1,123 @@
-"use client";
-
-import React, { Suspense, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, PerspectiveCamera } from "@react-three/drei";
-import * as THREE from "three";
+import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDownCircle } from "lucide-react";
-import { GLTF } from "three-stdlib";
-import { BorderBeamDemo } from "@/components/ui/lightcard";
+import { AnimatedBeamDemo } from "@/components/ui/animated-beams";
+import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
+import Image from "next/image";
+import githubImg from "../../public/github.png";
 
-type GLTFResult = GLTF & {
-  nodes: {
-    [key: string]: THREE.Mesh;
+export default function Component() {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+    hover: {
+      scale: 1.05,
+      transition: { type: "spring", stiffness: 400, damping: 10 },
+    },
   };
-  materials: {
-    [key: string]: THREE.Material;
-  };
-};
-
-function Model({ hovered }: { hovered: boolean }) {
-  const { scene } = useGLTF("/models/github/scene.gltf") as GLTFResult;
-  const ref = useRef<THREE.Group>(null);
-  const scale = useRef(new THREE.Vector3(2, 2, 2));
-  const targetScale = new THREE.Vector3(2.5, 2.5, 2.5);
-
-  useFrame(() => {
-    if (ref.current) {
-      scale.current.lerp(
-        hovered ? targetScale : new THREE.Vector3(2, 2, 2),
-        0.1
-      );
-      ref.current.scale.copy(scale.current);
-      ref.current.rotation.y += hovered ? 0.05 : 0.03;
-    }
-  });
-
-  return <primitive ref={ref} object={scene} />;
-}
-
-const GitHub: React.FC = () => {
-  const [hovered, setHovered] = useState(false);
 
   return (
-    <div
-      className="
-      border-[1px] border-gray-300 rounded-2xl
-      shadow-xl back
-      m-[25px] p-[25px] mb-32
-      drop-shadow-2xl
-      bg-transparent bg-clip-padding backdrop-blur-lg bg-opacity-30
-      overflow-hidden flex flex-col lg:flex-row justify-center items-center relative"
-    >
-      {/* Text and 3D model */}
-      <div className="w-full lg:w-2/3 flex flex-col lg:flex-row items-center justify-center mb-8 lg:mb-0 relative">
-        {/* Text */}
-        <div className="text-center lg:text-left mb-2 lg:mb-0 lg:mr-8 flex flex-col justify-center items-center">
-          <p className="text-2xl mb-2 ">Explore</p>
-          <h1
-            className="
-          text-[50px] lg:text-[200px]
-        text-gray-900
-          font-bold 
-          mb-4"
+    <div className="min-h-screen w-full bg-gradient-to-b from-white via-purple-100 to-white p-8">
+      <div className="border-[1px] border-gray-300 rounded-2xl shadow-xl m-6 p-6 drop-shadow-2xl bg-transparent bg-clip-padding backdrop-blur-lg bg-opacity-30 overflow-hidden flex flex-col justify-center items-center relative">
+        <div className="mx-auto max-w-7xl">
+          <motion.h1
+            className="mb-12 text-center text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            GitHub
-          </h1>
-          <p className="text-lg mb-4 max-w-md">
-            The world's leading platform for version control and collaboration. 
-            Join millions of developers to host and review code, manage projects, and build software together.
-          </p>
+            Collaborate with Developers Worldwide
+          </motion.h1>
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {/* Card 1: Collaborate */}
+            <motion.div
+              className="backdrop-blur-lg bg-white/30 border border-gray-300 rounded-2xl shadow-xl overflow-hidden"
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+            >
+              <div className="p-6">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
+                  Collaborate
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Illum, cum?
+                </p>
+                <div className="rounded-lg overflow-hidden">
+                  <AnimatedBeamDemo />
+                </div>
+              </div>
+            </motion.div>
 
-          {/* Sign Up button  */}
-          <div
-            className="
-            cursor-pointer
-            h-[30px] w-[125px]
-            p-2
-            rounded-2xl 
-            border-black border-[1px]
-            flex items-center justify-center
-            text-black
-            hover:bg-purple-900 hover:text-white
-            transition-all
-            duration-300
-            font-light
-            sm:text-center
-            "
-          >
-            Register Now
+            {/* Card 2: Session 01 */}
+            <motion.div
+              className="backdrop-blur-lg bg-white/30 border border-gray-300 rounded-2xl shadow-xl overflow-hidden"
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+            >
+              <div className="p-6">
+                <div className="mb-6">
+                  <NeonGradientCard className="max-w-sm mx-auto">
+                    <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-5xl sm:text-6xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+                      Session 01
+                    </span>
+                  </NeonGradientCard>
+                </div>
+                <p className="text-gray-600 mb-6">
+                  Explore advanced collaboration techniques and best practices
+                  for efficient teamwork in software development.
+                </p>
+                <ul className="text-center text-gray-700">
+                  <li className="mb-2">Session 01 - Git & GitHub</li>
+                  <li className="mb-2">Date - xxx</li>
+                  <li>Time - xxx</li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Card 3: Learn GitHub */}
+            <motion.div
+              className="backdrop-blur-lg bg-white/30 border border-gray-300 rounded-2xl shadow-xl overflow-hidden"
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+            >
+              <div className="p-6">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
+                  Learn{" "}
+                  <span className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#77bdff] to-[#c300ff]">
+                    GitHub
+                  </span>
+                </h2>
+                <div className="mt-6">
+                  <Image
+                    src={githubImg}
+                    alt="GitHub collaboration illustration"
+                    width={300}
+                    height={300}
+                    layout="responsive"
+                    className="rounded-lg object-cover shadow-lg"
+                  />
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </div>
-
-        {/* 3D model */}
-        <div
-          className="relative h-[500px] w-[500px] lg:h-[500px] lg:w-[500px]"
-          onPointerOver={() => setHovered(true)}
-          onPointerOut={() => setHovered(false)}
-        >
-          <Canvas>
-            <Suspense fallback={null}>
-              <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-              <ambientLight intensity={1} />
-              <directionalLight position={[10, 10, 10]} />
-              <pointLight position={[10, 10, 10]} intensity={1} />
-              <OrbitControls enableZoom={false} enablePan={false} />
-              <Model hovered={hovered} />
-            </Suspense>
-          </Canvas>
         </div>
       </div>
 
       {/* Cards */}
     </div>
   );
-};
-
-export default GitHub;
+}
