@@ -11,7 +11,6 @@ const Loader: React.FC = () => {
       loader.style.opacity = "1";
       setTimeout(() => {
         loader.style.opacity = "0";
-        loader.style.zIndex = "-1";
       }, 4000);
     }
   }, []);

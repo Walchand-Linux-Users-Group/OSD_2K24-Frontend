@@ -12,8 +12,9 @@ import {
 const Footer = () => {
     return(
         <>
-    <div id="about" className="text-black py-2 border-[8px] border-orange-400 rounded-lg">
-      <div className="flex flex-col space-y-14 md:space-y-0 md:flex-row bg-white lg:justify-evenly justify-center p-6 items-center lg:px-12">
+          <div id="about" className="text-black py-2 border-[8px] border-orange-400 rounded-lg">
+            {/* <img src={FooterImg} className=" bg-blend-multiply"></img> */}
+            <div className="flex flex-col space-y-14 md:space-y-0 md:flex-row bg-white lg:justify-evenly justify-center p-6 items-center lg:px-12">
                 
                 <div className="space-y-2">
                     <a href="https://www.wcewlug.org/" target="_blank">

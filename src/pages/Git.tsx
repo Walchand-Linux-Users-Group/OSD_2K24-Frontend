@@ -59,7 +59,7 @@ const Git: React.FC = () => {
           <h1
             className="
           text-[50px] lg:text-[300px]
-        text-[#9D2718]
+        text-orange-600
           font-bold 
           mb-4"
           >

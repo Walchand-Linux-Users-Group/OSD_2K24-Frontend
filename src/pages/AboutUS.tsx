@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import TimeLine from "../components/ui/TimeLine"; // Adjust the relative path based on the folder structure
-import Layout from "../components/ui/bgLayout";
 
 const AboutUS = () => {
   // Array of image paths
@@ -28,7 +27,7 @@ const AboutUS = () => {
     };
 
     // Set interval for changing images
-    const interval = setInterval(changeImage, 15000); // Change image every 3 seconds
+    const interval = setInterval(changeImage, 5000); // Change image every 3 seconds
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
@@ -36,7 +35,6 @@ const AboutUS = () => {
 
   return (
     <>
-    <Layout>
       <h1 className="mt-10 text-4xl font-bold text-center">About us</h1>
       <div className="min-h-screen w-full relative overflow-hidden">
         <div className="flex flex-col lg:flex-row h-full w-full relative">
@@ -66,7 +64,6 @@ const AboutUS = () => {
           </div>
         </div>
       </div>
-      </Layout>
     </>
   );
 };
