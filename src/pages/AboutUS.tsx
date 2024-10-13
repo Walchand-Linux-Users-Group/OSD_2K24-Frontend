@@ -9,6 +9,7 @@ const AboutUS = () => {
     "/wlug3.svg",
     "/wlug2.svg",
     "/wlug1.svg",
+    "/wlug4.svg"
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // State to track the current image index
@@ -27,7 +28,7 @@ const AboutUS = () => {
     };
 
     // Set interval for changing images
-    const interval = setInterval(changeImage, 15000); // Change image every 15 seconds
+    const interval = setInterval(changeImage, 8000); // Change image every 15 seconds
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
