@@ -4,7 +4,6 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 import { motion } from "framer-motion";
-import { ArrowDownCircle } from "lucide-react";
 import { GLTF } from "three-stdlib";
 import { BorderBeamDemo } from "@/components/ui/lightcard";
 import { AnimatedBeamDemo } from "@/components/ui/animated-beams";
@@ -65,7 +64,7 @@ const Git: React.FC = () => {
             <motion.div
                 className="
            bg-gradient-to-b from-white via-orange-100 to-white
-           p-4 py-16
+           p-4 py-12
           bg-transparent bg-clip-padding backdrop-blur-lg bg-opacity-30
           overflow-hidden flex flex-col justify-center items-center relative border-b rounded-t-[20px]"
                 initial={{ opacity: 0, y: 50 }}
@@ -77,20 +76,20 @@ const Git: React.FC = () => {
                     {/* Text */}
                     <div className="text-center lg:text-left mb-8 lg:mb-0 lg:mr-8 flex flex-col justify-center items-center lg:items-start">
                         <motion.p
-                            className="text-2xl mb-2"
+                            className="text-2xl mb-2 lg:self-start"
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
                         >
-                            Learn
+                            Master the power of
                         </motion.p>
                         <motion.h1
                             className="
                 text-[100px] sm:text-[200px] lg:text-[300px]
-                text-orange-600
+                text-orange-500
                 font-bold
                 font-righteous
-                mb-4"
+                py-2 lg:py-0"
                             initial={{ opacity: 0, scale: 0.5 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.3, duration: 0.5 }}
@@ -103,16 +102,18 @@ const Git: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
                         >
-                            The most trusted version control. Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit. Cupiditate,
-                            blanditiis.
+                            The backbone of open-source development. Git is the
+                            most trusted version control system, empowering
+                            collaboration across the globe, while GitHub hosts
+                            millions of innovative projects. Join the
+                            revolution.
                         </motion.p>
                         {/* Register button */}
                         <motion.div
                             className="
                 cursor-pointer
-                h-[20px] w-[150px]
-                p-2
+                h-[40px] w-[150px]
+                px-4 py-2
                 rounded-2xl
                 border-black border-[1px]
                 flex items-center justify-center
@@ -168,7 +169,7 @@ const Git: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        Collaborate with Developers Worldwide
+                        Delve into Remote Repos
                     </motion.h1>
                     <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {/* Card 1: Collaborate */}
@@ -184,8 +185,7 @@ const Git: React.FC = () => {
                                     Collaborate
                                 </h2>
                                 <p className="text-gray-600 mb-6">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Illum, cum?
+                                    Work on different branches, merge changes, and resolve conflicts with ease.
                                 </p>
                                 <div className="rounded-lg overflow-hidden flex justify-center items-center">
                                     <AnimatedBeamDemo />
@@ -234,17 +234,18 @@ const Git: React.FC = () => {
                         >
                             <div className="p-6">
                                 <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
-                                    Learn{" "}
-                                    <span className="text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#77bdff] to-[#c300ff]">
-                                        GitHub
-                                    </span>
+                                    Learn GitHub
                                 </h2>
-                                <div className="mt-6">
+                                <p className="text-gray-600 mb-6">
+                                    Discover the secrets to mastering GitHub and
+                                    utilizing its full potential.
+                                </p>
+                                <div className="">
                                     <Image
                                         src={githubImg}
                                         alt="GitHub collaboration illustration"
-                                        width={300}
-                                        height={300}
+                                        width={280}
+                                        height={280}
                                         layout="responsive"
                                         className="rounded-lg object-cover "
                                     />
