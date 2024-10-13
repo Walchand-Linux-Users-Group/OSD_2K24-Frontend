@@ -77,7 +77,7 @@ const CICD = () => {
                     <div className="space-y-12">
                         <SessionCard />
                         <FundamentalsCard />
-                        <AdvancedTopicsCard />
+                        {/* <AdvancedTopicsCard /> */}
                     </div>
                 </div>
             </div>
