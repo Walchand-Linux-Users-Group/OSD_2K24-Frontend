@@ -101,11 +101,15 @@ const OSDmain = () => {
               className=" h-[120px] w-[190px] rounded-2xl shadow-lg "
             />
           </motion.div>
-          <motion.div>
-            <BlurIn
-              word="Celebrates"
-              className=" text-xl tracking-wide text-gray-300 p-2 m-2"
-            />
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-center "
+          >
+            <h1 className="font-righteous text-xl tracking-wide text-gray-300 mt-2">
+              Celebrates{" "}
+            </h1>
           </motion.div>
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -124,12 +128,19 @@ const OSDmain = () => {
           </motion.div>
           <BlurIn
             word="Open Source Day"
-            className="font-righteous font-bold text-6xl lg:text-9xl text-orange-500 mt-2"
+            className="font-righteous text-6xl lg:text-9xl text-orange-500 font-bold m-2"
           />
-          <BlurIn
-            word="For the love of open source ❤️"
-            className=" font-md p-2 mt-2 text-xl tracking-wide text-gray-300"
-          />
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-center "
+          >
+            <h1 className="font-righteous text-xl tracking-wide text-gray-300">
+              For the love of open source ❤️
+            </h1>
+          </motion.div>
         </div>
 
         <div className="flex flex-col lg:flex-row justify-center items-center mt-8 gap-5 z-10">
