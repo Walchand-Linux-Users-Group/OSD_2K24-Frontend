@@ -40,7 +40,7 @@ export function AnimatedBeamDemo() {
 
   return (
     <div
-      className="relative grid w-full max-w-[500px] grid-cols-3 grid-rows-3 gap-4 items-center justify-center overflow-hidden rounded-lg border bg-background p-10 md:shadow-xl"
+      className="relative grid w-[300px] grid-cols-3 grid-rows-3 gap-4 items-center justify-center overflow-hidden rounded-lg border bg-background p-10 md:shadow-xl"
       ref={containerRef}
     >
       {/* Arrange circles in a grid with the central JSON icon */}

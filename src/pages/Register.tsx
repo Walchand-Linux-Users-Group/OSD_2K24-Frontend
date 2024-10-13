@@ -7,6 +7,39 @@ import Swal from "sweetalert2";
 import IconCloud from "@/components/ui/icon-cloud";
 import { BiChevronDown } from "react-icons/bi";
 
+const IconCludMine = () => {
+    return (
+        <motion.div className="w-full lg:w-1/2 h-full flex justify-center items-center p-6 lg:p-12">
+            <IconCloud
+                iconSlugs={[
+                    "opensourceinitiative",
+                    "ubuntu",
+                    "archlinux",
+                    "linuxmint",
+                    "fedora",
+                    "debian",
+                    "redhat",
+                    "centos",
+                    "kubernetes",
+                    "amazonaws",
+                    "terraform",
+                    "nginx",
+                    "docker",
+                    "git",
+                    "jira",
+                    "github",
+                    "gitlab",
+                    "visualstudiocode",
+                    "sonarqube",
+                    "jenkins",
+                    "jfrog",
+                    "eks",
+                ]}
+            />
+        </motion.div>
+    );
+};
+
 const Dropdown = ({
     label,
     selectedItem,
@@ -140,7 +173,7 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen py-12 px-4 sm:px-8 lg:px-10 relative overflow-hidden">
+        <div className="min-h-screen py-16 px-4 sm:px-8 lg:px-10 relative overflow-hidden bg-gradient-to-b from-[#faf8f6] via-orange-100 to-[#faf8f6]">
             <motion.div
                 ref={containerRef}
                 className="w-full relative max-w-7xl mx-auto bg-black/5 backdrop-blur-lg rounded-2xl shadow-2xl z-10 overflow-hidden"
@@ -148,34 +181,7 @@ const Register = () => {
                 animate={isInView ? "visible" : "hidden"}
             >
                 <div className="lg:flex py-2">
-                    <motion.div className="w-full lg:w-1/2 h-full flex justify-center items-center p-6 lg:p-12">
-                        <IconCloud
-                            iconSlugs={[
-                                "opensourceinitiative",
-                                "ubuntu",
-                                "archlinux",
-                                "linuxmint",
-                                "fedora",
-                                "debian",
-                                "redhat",
-                                "centos",
-                                "kubernetes",
-                                "amazonaws",
-                                "terraform",
-                                "nginx",
-                                "docker",
-                                "git",
-                                "jira",
-                                "github",
-                                "gitlab",
-                                "visualstudiocode",
-                                "sonarqube",
-                                "jenkins",
-                                "jfrog",
-                                "eks",
-                            ]}
-                        />
-                    </motion.div>
+                    <IconCludMine />
                     <motion.div className="w-full lg:w-1/2 p-6 py-8 lg:p-12 border-t lg:border-t-0 lg:border-l border-white">
                         <div className="mx-auto">
                             <motion.h2 className="text-3xl font-extrabold text-gray-900 mb-6">
@@ -257,7 +263,7 @@ const Register = () => {
                     </motion.div>
                 </div>
             </motion.div>
-            <Gooey />
+            {/* <Gooey /> */}
         </div>
     );
 };

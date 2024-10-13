@@ -128,7 +128,7 @@ export default function Home() {
       <VidSection />
       <div id="sessions">
         <Git />
-        <Github />
+        {/* <Github /> */}
 
         <CICD />
       </div>
