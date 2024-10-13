@@ -234,18 +234,18 @@ const Git: React.FC = () => {
                         >
                             <div className="p-6">
                                 <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
-                                    Learn GitHub
+                                    Learn Github
                                 </h2>
-                                <p className="text-gray-600 mb-6">
+                                <p className="text-gray-600">
                                     Discover the secrets to mastering GitHub and
                                     utilizing its full potential.
                                 </p>
-                                <div className="">
+                                <div>
                                     <Image
                                         src={githubImg}
                                         alt="GitHub collaboration illustration"
-                                        width={280}
-                                        height={280}
+                                        width={300}
+                                        height={300}
                                         layout="responsive"
                                         className="rounded-lg object-cover "
                                     />
