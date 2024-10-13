@@ -167,7 +167,7 @@ const Timeline = () => {
             {/* Right Column */}
             <div className="flex flex-col items-start w-1/2 pl-2"> {/* Adjusted padding left */}
               <p className="text-xs text-left text-gray-500">
-                {"March"}
+                {"February"}
               </p>
             </div>
 
@@ -191,7 +191,7 @@ const Timeline = () => {
             {/* Left Column */}
             <div className="flex flex-col items-end w-1/2 pr-2"> {/* Adjusted padding right */}
             <p className="text-xs text-left text-gray-500">
-                {"May"}
+                {"April"}
               </p>
             </div>
 

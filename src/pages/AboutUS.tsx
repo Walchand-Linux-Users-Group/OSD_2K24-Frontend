@@ -9,6 +9,7 @@ const AboutUS = () => {
     "/wlug3.svg",
     "/wlug2.svg",
     "/wlug1.svg",
+    "/wlug4.svg"
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // State to track the current image index
@@ -27,7 +28,7 @@ const AboutUS = () => {
     };
 
     // Set interval for changing images
-    const interval = setInterval(changeImage, 15000); // Change image every 15 seconds
+    const interval = setInterval(changeImage, 8000); // Change image every 15 seconds
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
@@ -37,7 +38,7 @@ const AboutUS = () => {
     <>
       {/* <BgLayout> */}
         <h1 className="mt-10 text-4xl mb-10 font-bold text-center">About us</h1>
-        <div className="min-h-screen w-full relative overflow-hidden">
+        <div className="min-h-screen w-full relative  overflow-hidden">
           <div className="flex flex-col lg:flex-row gap-5 h-full w-full relative">
             {/* Image Section with Glassmorphism and Border */}
             <div className="flex-1 flex justify-center rounded-3xl items-center h-full lg:h-auto lg:ml-10 mx-5 backdrop-blur-md bg-white bg-opacity-20 border-2 border-orange-500 border-opacity-40 shadow-lg"> 
