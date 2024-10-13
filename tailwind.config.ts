@@ -9,7 +9,7 @@ const config: Config = {
   ],
   theme: {
   	container: {
-		center: true,
+  		center: 'true',
   		padding: '2rem',
   		screens: {
   			'2xl': '1400px'
@@ -77,20 +77,29 @@ const config: Config = {
   				'100%': {
   					'offset-distance': '100%'
   				}
+  			},
+  			'background-position-spin': {
+  				'0%': {
+  					backgroundPosition: 'top center'
+  				},
+  				'100%': {
+  					backgroundPosition: 'bottom center'
+  				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
-			  'spin-slow': 'spin 30s linear infinite', // Slow spin animation
+  			'spin-slow': 'spin 30s linear infinite',
+  			'background-position-spin': 'background-position-spin 3000ms infinite alternate'
   		},
-		fontFamily:{
-			'poppins': ['Poppins', 'sans-serif'],
-			'righteous': ['Righteous', 'sans-serif'],
-			'calistoga': ['Calistoga', 'sans-serif'],
-			'inter': ['Inter', 'sans-serif'],
-		}
+  		fontFamily: {
+  			poppins: ['Poppins', 'sans-serif'],
+  			righteous: ['Righteous', 'sans-serif'],
+  			calistoga: ['Calistoga', 'sans-serif'],
+  			inter: ['Inter', 'sans-serif']
+  		}
   	}
   },
   plugins: [require("tailwindcss-animate")],

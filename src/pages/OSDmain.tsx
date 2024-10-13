@@ -1,17 +1,18 @@
+"use client";
+
 import React from "react";
-import wlugLogo from "../assets/wlug/wlug_white_logo_page-0001.jpg";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import wlugLogo from "../assets/wlug/wlug_white_logo_page-0001.jpg";
 import grainImage from "../assets/grain.jpg";
 import Icon from "@/components/Icon";
 import HeroOrbit from "@/components/HeroOrbit";
 
 const OSDmain = () => {
-  // Handler for the first button
   const handleAboutClick = () => {
     console.log("Want to know about us button clicked!");
   };
 
-  // Handler for the second button
   const handleRegisterClick = () => {
     console.log("Register button clicked!");
   };
@@ -23,7 +24,7 @@ const OSDmain = () => {
         relative z-0 overflow-hidden
         py-32 md:py-48 lg:py-60"
     >
-      <div className=" absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)] ">
+      <div className="bg-elements absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)] ">
         <div
           className="absolute inset-0 -z-30 opacity-5"
           style={{
@@ -79,50 +80,86 @@ const OSDmain = () => {
       </div>
       <div className="container">
         <div className="flex flex-col items-center">
-          <Image
-            src={wlugLogo}
-            alt="WLUG Logo"
-            className="w-[100px] h-[100px]"
-          />
-          <div className="mt-4 bg-gray-400 border border-gray-300 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
+          <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image
+              src={wlugLogo}
+              alt="WLUG Logo"
+              className="w-[100px] h-[100px]"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="mt-4 bg-gray-400 border border-gray-300 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg"
+          >
             <div className="bg-green-500 shadow-lg shadow-green-300 w-2.5 h-2.5 rounded-full"></div>
             <div className="text-sm font-medium text-gray-800">
               Presents the auspicious event
             </div>
-          </div>
+          </motion.div>
 
-          <div className="text-center mt-4">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-center mt-4"
+          >
             <h1 className="font-righteous text-xl tracking-wide text-gray-300">
               For the love of open source
             </h1>
-            <div className="font-righteous text-6xl text-orange-500 font-bold mt-2">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+              className="font-righteous text-6xl text-orange-500 font-bold mt-2"
+            >
               OPEN SOURCE DAY
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-        <p className="mt-4 text-center text-gray-300">
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.5 }}
+          className="mt-4 text-center text-gray-300"
+        >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat,
           velit!
-        </p>
+        </motion.p>
 
         <div className="flex flex-col items-center mt-8 gap-5 z-10">
-          <button
+          <motion.button
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.1, duration: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={handleAboutClick}
             className="inline-flex items-center justify-center gap-2 border border-white/15 px-6 h-12 w-48 rounded-xl z-10 focus:outline-none focus:ring-2 focus:ring-orange-300"
             aria-label="Learn more about us"
           >
             <span className="font-semibold">🐧</span>
             <span className="text-white">Want to know about us?</span>
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.3, duration: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={handleRegisterClick}
             className="inline-flex items-center justify-center gap-2 border border-white px-6 h-12 w-48 rounded-xl bg-white text-black font-semibold focus:outline-none focus:ring-2 focus:ring-orange-300"
             aria-label="Register for the event"
-            style={{ zIndex: 10 }} // Ensure this button is above other elements
+            style={{ zIndex: 10 }}
           >
             <span>👾</span>
             <span className="font-semibold">REGISTER</span>
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
