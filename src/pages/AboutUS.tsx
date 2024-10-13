@@ -38,7 +38,7 @@ const AboutUS = () => {
     <>
       <BgLayout>
         <h1 className="mt-10 text-4xl mb-10 font-bold text-center">About us</h1>
-        <div className="min-h-screen w-full relative overflow-hidden">
+        <div className="min-h-screen w-full relative  overflow-hidden">
           <div className="flex flex-col lg:flex-row gap-5 h-full w-full relative">
             {/* Image Section with Glassmorphism and Border */}
             <div className="flex-1 flex justify-center rounded-3xl items-center h-full lg:h-auto lg:ml-10 mx-5 backdrop-blur-md bg-white bg-opacity-20 border-2 border-orange-500 border-opacity-40 shadow-lg"> 
