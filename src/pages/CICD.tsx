@@ -60,7 +60,7 @@ const cardVariants = {
 const CICD = () => {
     return (
         <div className="min-h-screen flex flex-col justify-center items-center p-8 my-12">
-            <div className="w-full flex flex-col bg-gradient-to-b from-white via-blue-50 to-white rounded-[20px] shadow-xl max-w-7x py-8 p-2">
+            <div className="w-full flex flex-col bg-gradient-to-b from-white via-blue-50 to-white rounded-[20px] shadow-xl max-w-7xl py-8 p-2">
                 <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Learn CI/CD</h1>
 
                 <div className="rounded-xl w-full flex flex-col lg:flex-row justify-center items-center p-8 md:p-12">
