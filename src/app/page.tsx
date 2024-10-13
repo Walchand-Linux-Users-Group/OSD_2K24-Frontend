@@ -122,10 +122,12 @@ export default function Home() {
         </motion.div>
       </AnimatePresence>
 
-      <div id="home">
+      <div id="home" className=" h-screen w-full">
         <OSDmain />
       </div>
-      <VidSection />
+      <div className=" h-screen w-full  bg-gradient-to-b from-zinc-800 via-zinc-800 to-white">
+        <VidSection />
+      </div>
       <div id="sessions">
         <Git />
         <Github />
