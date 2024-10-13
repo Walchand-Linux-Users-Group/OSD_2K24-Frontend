@@ -132,7 +132,6 @@ export default function Home() {
       <div id="sessions">
         <Git />
         <Github />
-
         <CICD />
       </div>
       <div id="register">
