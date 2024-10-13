@@ -61,6 +61,7 @@ const Git: React.FC = () => {
           text-[200px] lg:text-[300px]
         text-orange-600
           font-bold 
+          font-righteous
           mb-4"
           >
             GIT

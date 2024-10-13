@@ -9,7 +9,7 @@ const config: Config = {
   ],
   theme: {
   	container: {
-  		center: 'true',
+		center: true,
   		padding: '2rem',
   		screens: {
   			'2xl': '1400px'
@@ -82,11 +82,14 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear'
+  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+			  'spin-slow': 'spin 30s linear infinite', // Slow spin animation
   		},
 		fontFamily:{
 			'poppins': ['Poppins', 'sans-serif'],
 			'righteous': ['Righteous', 'sans-serif'],
+			'calistoga': ['Calistoga', 'sans-serif'],
+			'inter': ['Inter', 'sans-serif'],
 		}
   	}
   },
